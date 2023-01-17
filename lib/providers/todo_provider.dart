@@ -35,12 +35,14 @@ class TodoProvider extends ChangeNotifier {
   }
 
   void onSave(String todo) {
-    todoList.add(
-      ItemModel(
-        id: DateTime.now().millisecondsSinceEpoch.toString(),
-        text: todo,
-      ),
-    );
+    if (todo.isNotEmpty) {
+      todoList.add(
+        ItemModel(
+          id: DateTime.now().millisecondsSinceEpoch.toString(),
+          text: todo,
+        ),
+      );
+    }
     notifyListeners();
   }
 
