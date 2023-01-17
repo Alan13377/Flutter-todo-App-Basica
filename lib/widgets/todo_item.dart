@@ -22,7 +22,11 @@ class TodoItem extends ConsumerWidget {
       margin: const EdgeInsets.only(bottom: 20),
       child: ListTile(
         onTap: () => onTodoChange(),
-        title: Text(todo.text),
+        title: Text(
+          todo.text,
+          style: TextStyle(
+              decoration: todo.isDone ? TextDecoration.lineThrough : null),
+        ),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(
             10,
